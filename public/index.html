@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCounter</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="loader">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+        <div class="wrapper">
+            <div class="calculator">
+                <h1><span class="w">W</span>ondering how many lines of code your project have?</h1>
+                <p class="desc">Select project folder or <span class="desc-toggle">enter Github repository</span></p>
+                <label for="file-loader" class="custom" id="label-file-loader">
+                    <input type="file" multiple="multiple" id="file-loader" />
+                    <div id="file-list">Drop folder or select files</div>
+                </label>
+                <button id="select-calculate" class="btn">Calculate</button>
+                <p id="select-msg" class="msg"></p>
+            </div>
+            <div class="github active">
+                <h1><span class="w">W</span>ondering how many lines of code your project have?</h1>
+                <p class="desc">Enter Github repository or <span class="desc-toggle">select project folder</span></p>
+                <input type="text" id="repo" placeholder="Github repository URL" />
+                <button id="github-calculate" class="btn">Calculate</button>
+                <p id="github-msg" class="msg"></p>
+            </div>
+            <div class="results">
+                <h1><span class="r">R</span>esult</h1>
+                <div class="flex">
+                    <!-- <select id="file-filter"></select> -->
+                    <ul id="file-filter" data-id="file-filter">
+                        <li data-id="file-filter">
+                            <span data-id="file-filter">Filter</span>
+                            <ul id="file-filter-list" data-id="file-filter">
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul data-id="exclude">
+                        <li data-id="exclude">
+                            <span data-id="exclude">Exclude</span>
+                            <ul id="exclude-file-list" data-id="exclude">
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="results-panel"></div>
+                <button id="back" class="btn">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/html.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/events.js"></script>
+</body>
+</html>

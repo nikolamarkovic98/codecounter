@@ -1,0 +1,255 @@
+html, body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Neue', cursive;
+    background-color: #333;
+    color: #fff;
+    cursor: default;
+}
+button{ font-family: 'Comic Neue', cursive; }
+h1{ 
+    margin-bottom: 0;
+    font-weight: lighter; 
+}
+h1 span{
+    font-size: 64px;
+    color: rgb(255, 166, 0);
+}
+h1 .w{ margin-right: -10px; }
+h1 .r{ margin-right: -2px; }
+.app{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.wrapper{
+    width: 440px;
+    margin-top: 60px;
+    padding: 10px;
+}
+.desc{ display: inline-block; }
+.desc span{
+    cursor: pointer;
+    color: orange
+}
+.desc span:hover{ text-decoration: underline; }
+
+.calculator, .github{
+    display: none;
+}
+.calculator.active, .github.active{
+    display: block;
+}
+
+#file-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;
+    /*border: 1px solid #666;*/
+    border-radius: 12px;
+}
+#file-list .file{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #666;
+}
+#file-list .file .file-name{
+    width: 75%;
+    margin: 0;
+    overflow-x: hidden;
+    text-align: left;
+}
+#file-list .file button{
+    width: 20%;
+    background-color: rgb(255, 110, 110);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+#label-file-loader{ 
+    position: relative;
+    border: 1px solid #666; 
+}
+#file-list .file button:hover{ background-color: rgb(255, 83, 83); }
+#file-loader, .btn{ display: none; padding: 16px 0; }
+.btn{
+    border: 1px solid #666;
+}
+.btn, .custom{
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+    background-color: inherit;
+    color: #fff;
+    outline: none;
+    border-radius: 24px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 12px;
+}
+.btn:hover{
+    background-color: orange;
+    border-color: orange;
+    color: #000;
+}
+.msg{
+    min-height: 30px;
+    color: rgb(255, 110, 110);
+}
+.calculator, .github, .results{
+    transition: 0.5s;
+}
+.results{
+    display: none;
+    margin: 0 60px;
+    opacity: 0;
+}
+.results .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul {
+    width: 50%;
+    border: 1px solid #666;
+}
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+ul li{
+    width: 100%;
+    position: relative;
+}
+ul li span{
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+}
+ul li ul{
+    width: 100%;
+    max-height: 340px;
+    display: none;  
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: #222;
+    overflow-y: auto;
+}
+ul li ul li{
+    padding: 8px 4px;
+    border-bottom: 1px solid #999;
+    overflow: hidden;
+}
+ul li ul li:last-child{
+    border: none;
+}
+.calculator.animate{
+    opacity: 0;
+}
+.github.animate{
+    opacity: 0;
+}
+.results.animate{
+    opacity: 1;
+}
+.results .result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 12px 0 12px 12px;
+    background-color: inherit;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+}
+input:hover{
+    border-color: rgb(255, 166, 0, 0.4);
+}
+input:focus{
+    border-color: orange;
+    box-shadow: 2px 2px 8px rgb(255, 166, 0, 0.2);;
+    cursor: auto;
+}
+
+.loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(20, 13, 0, 0.8);
+}
+.loader div{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    opacity: 0;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+@media(max-width: 500px){
+    .wrapper{
+        width: 88%;
+    }
+    h1{
+        font-size: 24px;
+    }
+    h1 span{
+        font-size: 56px;
+    }
+    .loader div{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media(max-width: 440px){
+    .results{
+        margin: 0 30px;
+    }
+}
+@media(max-width: 380px){
+    h1{
+        font-size: 20px;
+    }
+    h1 span{
+        font-size: 48px;
+    }
+    h1 .w{ margin-right: -8px; }
+}
+@media(max-width: 320px){
+    .results{
+        margin: 0;
+    }
+}
