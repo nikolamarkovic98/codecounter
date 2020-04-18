@@ -12,8 +12,9 @@ let panel = 'github', buttonsActive = true, filesAdded = false;
 
 let results = [];
 
-const myurl = 'http://code-counter.herokuapp.com';
-// const myurl = 'http://localhost:4000';
+
+// const myurl = 'http://codecounter.herokuapp.com';
+const myurl = 'http://localhost:4000';
 
 const calculateTotal = () => {
     return new Promise((resolve, reject) => {
