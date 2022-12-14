@@ -18,8 +18,8 @@ let panel = "github",
 
 let results = [];
 
-const myurl = "https://code-counter.onrender.com";
-// const myurl = 'http://localhost:4000';
+// const myurl = "https://code-counter.onrender.com";
+const myurl = "http://localhost:4000";
 
 const calculateTotal = () => {
     return new Promise((resolve, reject) => {

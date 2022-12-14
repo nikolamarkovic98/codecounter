@@ -88,7 +88,7 @@ const repoExist = async (repoName) => {
     return new Promise(async (resolve, reject) => {
         let dirs;
         try {
-            dirs = await fs.promises.opendir(path.join(__dirname, "repos"));
+            dirs = await fs.promises.opendir("./repos");
         } catch (err) {
             console.log(err);
             reject(true);
